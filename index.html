@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casual Hotel Yogyakarta Network – Premium</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C97A;
+    --gold-pale: #F5E9C8;
+    --obsidian: #0D0D0D;
+    --charcoal: #1A1A1A;
+    --surface: #141414;
+    --border: rgba(201,168,76,0.25);
+    --text-muted: #888;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--obsidian);
+    color: #E8E0D0;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 24px 72px;
+  }
+
+  /* ─── LOGO ─── */
+  .logo-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .logo-svg-container {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 24px rgba(201,168,76,0.30));
+  }
+
+  .logo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .logo-sub {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+    text-align: center;
+  }
+
+  /* ─── GOLD RULE ─── */
+  .rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+    margin: 32px 0;
+    opacity: 0.5;
+  }
+
+  .rule-short {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 12px auto 20px;
+    opacity: 0.6;
+  }
+
+  /* ─── TAGLINE ─── */
+  .tagline {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #F0E8D5;
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+
+  .tagline em {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .intro {
+    text-align: center;
+    color: #aaa;
+    font-size: 13.5px;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* ─── SECTIONS ─── */
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 28px 28px 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--gold) 0%, transparent 100%);
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #F0E8D5;
+    margin-bottom: 14px;
+  }
+
+  .item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .item:last-child { margin-bottom: 0; }
+
+  .item-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    margin-top: 1px;
+  }
+
+  .item-text strong {
+    display: block;
+    font-size: 13px;
+    color: #E8E0D0;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .item-text span {
+    font-size: 12.5px;
+    color: #888;
+  }
+
+  /* ─── PROFESI GRID ─── */
+  .prof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .prof-card {
+    background: rgba(201,168,76,0.05);
+    border: 1px solid rgba(201,168,76,0.12);
+    border-radius: 2px;
+    padding: 12px 14px;
+  }
+
+  .prof-card .cat {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .prof-card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .prof-card ul li {
+    font-size: 12px;
+    color: #aaa;
+    padding: 2px 0;
+  }
+
+  .prof-card ul li::before {
+    content: '· ';
+    color: var(--gold);
+    opacity: 0.6;
+  }
+
+  /* ─── RULES ─── */
+  .rule-list { list-style: none; padding: 0; }
+
+  .rule-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 13px;
+    color: #999;
+  }
+
+  .rule-list li:last-child { border-bottom: none; }
+
+  .rule-list li .rnum {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    background: rgba(201,168,76,0.10);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .rule-list li strong { color: #d0c8b8; }
+
+  /* ─── CTA ─── */
+  .cta-block {
+    text-align: center;
+    padding: 36px 24px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    margin-top: 8px;
+  }
+
+  .cta-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .cta-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: #F0E8D5;
+    margin-bottom: 6px;
+  }
+
+  .cta-sub {
+    font-size: 12.5px;
+    color: #777;
+    margin-bottom: 22px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    color: var(--obsidian);
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    text-align: center;
+    margin-top: 48px;
+    font-size: 11px;
+    color: #444;
+    letter-spacing: 0.1em;
+  }
+
+  .footer span { color: var(--gold); opacity: 0.7; }
+
+  @media (max-width: 480px) {
+    .prof-grid { grid-template-columns: 1fr; }
+    .section { padding: 20px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- LOGO -->
+  <div class="logo-wrap">
+    <div class="logo-svg-container">
+      <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" width="160" height="160">
+        <!-- Outer octagonal ring -->
+        <polygon points="80,8 108,20 132,44 144,72 144,88 132,116 108,140 80,152 52,140 28,116 16,88 16,72 28,44 52,20" 
+                 stroke="#C9A84C" stroke-width="1.2" fill="none" opacity="0.5"/>
+        <!-- Inner ring -->
+        <polygon points="80,18 104,28 124,48 134,72 134,88 124,112 104,132 80,142 56,132 36,112 26,88 26,72 36,48 56,28"
+                 stroke="#C9A84C" stroke-width="0.6" fill="none" opacity="0.25"/>
+
+        <!-- Hotel silhouette -->
+        <!-- Main building body -->
+        <rect x="50" y="72" width="60" height="52" fill="#C9A84C" opacity="0.12"/>
+        <rect x="50" y="72" width="60" height="52" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <!-- Roof / pediment -->
+        <polygon points="80,52 110,72 50,72" fill="#C9A84C" opacity="0.22"/>
+        <polygon points="80,52 110,72 50,72" stroke="#C9A84C" stroke-width="1" fill="none"/>
+        <!-- Flag pole -->
+        <line x1="80" y1="38" x2="80" y2="52" stroke="#C9A84C" stroke-width="1.2" opacity="0.8"/>
+        <!-- Flag -->
+        <polygon points="80,38 94,43 80,48" fill="#C9A84C" opacity="0.9"/>
+        <!-- Door -->
+        <rect x="72" y="98" width="16" height="26" fill="#C9A84C" opacity="0.35"/>
+        <rect x="72" y="98" width="16" height="26" stroke="#C9A84C" stroke-width="0.8" fill="none"/>
+        <!-- Windows row 1 -->
+        <rect x="55" y="78" width="10" height="10" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/>
+        <rect x="95" y="78" width="10" height="10" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/>
+        <!-- Windows row 2 -->
+        <rect x="55" y="95" width="10" height="10" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/>
+        <rect x="95" y="95" width="10" height="10" stroke="#C9A84C" stroke-width="0.8" fill="rgba(201,168,76,0.15)"/>
+
+        <!-- 5 stars beneath building -->
+        <text x="80" y="140" text-anchor="middle" font-size="11" fill="#C9A84C" opacity="0.85" font-family="Arial">★★★★★</text>
+
+        <!-- Corner ornaments -->
+        <circle cx="80" cy="80" r="55" stroke="#C9A84C" stroke-width="0.3" fill="none" opacity="0.15"/>
+      </svg>
+    </div>
+    <div class="logo-title">Casual Hotel Network</div>
+    <div class="logo-sub">Yogyakarta &amp; Sekitarnya · Est. 2024</div>
+  </div>
+
+  <div class="rule"></div>
+
+  <!-- TAGLINE -->
+  <div class="tagline">Jaringan Pekerja Casual<br><em>Berkelas Bintang Lima</em></div>
+  <div class="rule-short"></div>
+  <p class="intro">
+    Komunitas profesional bagi para tenaga casual perhotelan Yogyakarta — dibangun di atas nilai kejujuran, disiplin, dan standar pelayanan tertinggi.
+  </p>
+
+  <div class="rule"></div>
+
+  <!-- TUJUAN -->
+  <div class="section">
+    <div class="section-label">Misi Komunitas</div>
+    <div class="section-title">Mengapa Kita Ada</div>
+
+    <div class="item">
+      <div class="item-icon">🤝</div>
+      <div class="item-text">
+        <strong>Jaringan Profesional</strong>
+        <span>Menghubungkan pekerja casual dengan pihak operasional hotel secara langsung, cepat, dan terpercaya.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">📡</div>
+      <div class="item-text">
+        <strong>Pusat Informasi Valid</strong>
+        <span>Sumber terpercaya untuk jadwal DW/casual, kebutuhan tenaga mendadak, dan peluang karir perhotelan.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">📈</div>
+      <div class="item-text">
+        <strong>Pertumbuhan Bersama</strong>
+        <span>Saling mendukung dalam penguasaan SOP premium — dari kerapian housekeeping hingga kelancaran F&B service.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- STANDAR -->
+  <div class="section">
+    <div class="section-label">Standar Kami</div>
+    <div class="section-title">Tiga Pilar Bintang Lima</div>
+
+    <div class="item">
+      <div class="item-icon">🎖</div>
+      <div class="item-text">
+        <strong>Attitude &amp; Disiplin</strong>
+        <span>Etika kerja, ketepatan waktu, dan tanggung jawab penuh adalah nilai yang tidak bisa dikompromikan.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">✦</div>
+      <div class="item-text">
+        <strong>Grooming &amp; Citra Elegan</strong>
+        <span>Penampilan rapi dan profesional yang merepresentasikan mutu properti tempat kita bertugas.</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-icon">🔧</div>
+      <div class="item-text">
+        <strong>Skill Mastery</strong>
+        <span>Mentalitas terus belajar, adaptif, dan mengasah keterampilan teknis di setiap penugasan.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESI -->
+  <div class="section">
+    <div class="section-label">Cakupan Profesi</div>
+    <div class="section-title">Posisi yang Tersedia di Grup Ini</div>
+    <div class="prof-grid">
+      <div class="prof-card">
+        <div class="cat">F&amp;B Service</div>
+        <ul>
+          <li>Banquet Waiter/Waitress</li>
+          <li>Restaurant Server</li>
+          <li>Greeter · Runner</li>
+          <li>Bartender · Barista</li>
+        </ul>
+      </div>
+      <div class="prof-card">
+        <div class="cat">Kitchen &amp; Steward</div>
+        <ul>
+          <li>Cook Helper</li>
+          <li>Steward</li>
+          <li>Dishwasher</li>
+        </ul>
+      </div>
+      <div class="prof-card">
+        <div class="cat">Room Division</div>
+        <ul>
+          <li>Room Attendant</li>
+          <li>Public Area / PA</li>
+          <li>Laundry</li>
+        </ul>
+      </div>
+      <div class="prof-card">
+        <div class="cat">Front Office &amp; Lainnya</div>
+        <ul>
+          <li>Bellboy · Doorman</li>
+          <li>Valet Parking</li>
+          <li>Security Event</li>
+          <li>SPG/SPB · Usher · EO Crew</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERATURAN -->
+  <div class="section">
+    <div class="section-label">Tata Tertib</div>
+    <div class="section-title">Komitmen Anggota Komunitas</div>
+    <ul class="rule-list">
+      <li>
+        <div class="rnum">1</div>
+        <div><strong>Validitas Informasi Loker —</strong> Setiap info job wajib mencantumkan posisi, lokasi/hotel, jam kerja, fee, dan kontak person yang dapat dihubungi.</div>
+      </li>
+      <li>
+        <div class="rnum">2</div>
+        <div><strong>Klarifikasi Grooming —</strong> Sebutkan syarat penampilan secara eksplisit: standar hotel bintang berapa, dresscode, dan kelengkapan atribut.</div>
+      </li>
+      <li>
+        <div class="rnum">3</div>
+        <div><strong>Bahasa &amp; Etika —</strong> Gunakan bahasa sopan, profesional, dan saling menghargai. Konten SARA, spam, atau promosi di luar konteks perhotelan tidak ditoleransi.</div>
+      </li>
+      <li>
+        <div class="rnum">4</div>
+        <div><strong>Zero Cancel Mendadak —</strong> Jika sudah konfirmasi mengambil shift, pantang <em>hit &amp; run</em>. Reputasi kita adalah aset kolektif komunitas ini.</div>
+      </li>
+      <li>
+        <div class="rnum">5</div>
+        <div><strong>Anti Penipuan —</strong> Dilarang keras membagikan link mencurigakan, loker fiktif, atau konten judi online. Pelanggaran berakibat pengeluaran langsung.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <div class="cta-eyebrow">Bergabung Sekarang</div>
+    <div class="cta-heading">Jadilah Bagian dari Standar Terbaik</div>
+    <p class="cta-sub">Bersama kita tingkatkan standar, bersama kita maju.<br>Casual bukan berarti sembarangan — casual berarti fleksibel namun tetap profesional.</p>
+    <a class="cta-btn" href="https://chat.whatsapp.com/HylBYcAbqVOE70qx1BlqQb" target="_blank">
+      Gabung Grup WhatsApp
+    </a>
+  </div>
+
+  <div class="footer">
+    <span>★★★★★</span> &nbsp; Casual Hotel Yogyakarta Network &nbsp; <span>★★★★★</span><br>
+    Yogyakarta · Indonesia · Hospitality Professionals
+  </div>
+
+</div>
+</body>
+</html>
